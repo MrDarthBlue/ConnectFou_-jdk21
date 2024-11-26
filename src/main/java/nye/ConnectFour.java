@@ -89,7 +89,7 @@ public class ConnectFour {
             board.saveToFile(filePath);
         } catch (IOException e) {
         }
-        // High score táblázat megjelenítése
+        // high score táblázat megjelenítése
         Database.displayHighScores();
         scanner.close();
     }

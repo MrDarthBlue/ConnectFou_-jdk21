@@ -1,6 +1,7 @@
 package nye.adatbazis;
 import java.sql.*;
 
+//chatgpt help
 public class Database {
     private static final String DB_URL = "jdbc:sqlite:game_highscores.db";
 
