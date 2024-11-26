@@ -1,13 +1,18 @@
 package nye;
 
+import nye.adatbazis.Database;
 import nye.jatekosok.AIPlayer;
 import nye.jatekosok.Player;
 import nye.tabla.Board;
+
 import java.io.IOException;
 import java.util.Scanner;
 
 public class ConnectFour {
     public static void main(String[] args) {
+        //betöltjük az adatbázist
+        Database.initializeDatabase();
+
         Scanner scanner = new Scanner(System.in);
         String filePath = "game_state.txt"; // a játékállást tartalmazó fájl elérési útja, neve
         Board board = null;
@@ -50,6 +55,8 @@ public class ConnectFour {
 
             if (board.checkWin(human.getColor())) {
                 System.out.println("Győztél!");
+                // játékos "nyereményének száma" frissítése az adatbázisban
+                Database.updatePlayerWins(human.getName());
                 gameOver = true;
                 break;
             }
@@ -82,7 +89,8 @@ public class ConnectFour {
             board.saveToFile(filePath);
         } catch (IOException e) {
         }
-
+        // High score táblázat megjelenítése
+        Database.displayHighScores();
         scanner.close();
     }
 }
