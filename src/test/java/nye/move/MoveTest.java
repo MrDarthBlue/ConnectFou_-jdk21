@@ -1,7 +1,7 @@
 package nye.move;
 
 import nye.lepes.Move;
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class MoveTest {
