@@ -6,10 +6,11 @@ public final class GameResult {
     private final char winnerColor;
     private final boolean isDraw;
 
+    //konstruktor ami inicializálja az osztály attribútumait.
     public GameResult(String winnerName, char winnerColor, boolean isDraw) {
-        this.winnerName = winnerName;
-        this.winnerColor = winnerColor;
-        this.isDraw = isDraw;
+        this.winnerName = winnerName; //nyertes neve
+        this.winnerColor = winnerColor; //nyertes szine
+        this.isDraw = isDraw; //döntetlen-e
     }
 
     public String getWinnerName() {
