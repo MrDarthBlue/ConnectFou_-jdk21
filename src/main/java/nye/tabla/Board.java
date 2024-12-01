@@ -72,6 +72,7 @@ public class Board {
         return false; // Ha az oszlop tele van
     }
 
+    //ellenörzi hogy a tábla tele van-e tehat az oszlopok teteje foglalt
     public boolean isFull() {
         for (int j = 0; j < cols; j++) {
             if (grid[0][j] == emptySlot) {
@@ -106,31 +107,32 @@ public class Board {
         if (row + 3 < rows && col + 3 < cols && grid[row][col] == color &&
                 grid[row + 1][col + 1] == color && grid[row + 2][col + 2] == color &&
                 grid[row + 3][col + 3] == color) {
-            return true; // Diagonális(átlós) (balról jobbra)
+            return true; // Diagonális(átlós) (balról jobbra lefelé)
         }
         if (row - 3 >= 0 && col + 3 < cols && grid[row][col] == color &&
                 grid[row - 1][col + 1] == color && grid[row - 2][col + 2] == color &&
                 grid[row - 3][col + 3] == color) {
-            return true; // Diagonális(átlós) (jobbról balra)
+            return true; // Diagonális(átlós) (jobbról balra felfelé)
         }
         return false;
     }
 
     private int columnToIndex(String column) {
-        return column.toLowerCase().charAt(0) - 'a';
+        return column.toLowerCase().charAt(0) - 'a'; //oszlopot kisbetűvé alakítja
     }
 
     public void display() {
         System.out.println("  a b c d e f g");
-        for (int i = 0; i < rows; i++) {
+        for (int i = 0; i < rows; i++) { //sor iteráció
             System.out.print((i + 1) + " ");
-            for (int j = 0; j < cols; j++) {
+            for (int j = 0; j < cols; j++) { //oszlopiteráció
                 System.out.print(grid[i][j] + " ");
             }
             System.out.println();
         }
     }
 
+    //ellenörzi hogy a megadott oszlopban van-e még hely
     public boolean isColumnAvailable(String column) {
         int colIndex = columnToIndex(column);
         if (colIndex < 0 || colIndex >= cols) {
