@@ -2,11 +2,9 @@ package nye.eredmeny;
 import java.util.Objects;
 
 public final class GameResult {
-    private final String winnerName; //nyertes neve
-    private final char winnerColor; //nyertes "jele"
-    private final boolean isDraw; //a játék döntetlen vagy nem
-
-    // konstruktor, amely betölti a nyertes nevét, színét és a döntetlent
+    private final String winnerName;
+    private final char winnerColor;
+    private final boolean isDraw;
 
     public GameResult(String winnerName, char winnerColor, boolean isDraw) {
         this.winnerName = winnerName;

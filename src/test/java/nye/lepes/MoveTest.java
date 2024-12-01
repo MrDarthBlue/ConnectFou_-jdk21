@@ -1,6 +1,5 @@
-package nye.move;
+package nye.lepes;
 
-import nye.lepes.Move;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

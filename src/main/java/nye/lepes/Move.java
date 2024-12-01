@@ -7,7 +7,7 @@ public final class Move {
     private final String column;
 
     public Move(String playerName, char color, String column) {
-        this.playerName = playerName; //betölti a játékos nevét
+        this.playerName = playerName; //Inicializálja a játékos nevét
         this.color = color;   //játékos szine
         this.column = column;   //lépés oszlopa
     }
@@ -30,7 +30,7 @@ public final class Move {
         if (o == null || getClass() != o.getClass()) return false;
         Move move = (Move) o;
         return color == move.color && Objects.equals(playerName, move.playerName) && Objects.equals(column, move.column);
-    }         // ellenőrzi, hogy a szinek, a játékos neve és az oszlop egyenlőek-e.
+    }         // Ellenőrzi, hogy a szinek, a játékos neve és az oszlop egyenlőek-e.
 
     @Override
     public int hashCode() {

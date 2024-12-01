@@ -4,7 +4,7 @@ import java.util.Objects;
 public final class Cell {
     private final int row;
     private final int col;
-    private final char content; // a cella tartalma ('Y', 'R' vagy '.' üres esetén).
+    private final char content; // A cella tartalma ('Y', 'R' vagy '.' üres esetén).
 
     public Cell(int row, int col, char content) {
         this.row = row;
@@ -29,7 +29,7 @@ public final class Cell {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Cell cell = (Cell) o;
-        return row == cell.row && col == cell.col && content == cell.content; // ellenőrzi a sor, oszlop és tartalom egyenlő-e
+        return row == cell.row && col == cell.col && content == cell.content; // Ellenőrzi a sor, oszlop és tartalom egyenlőségét.
     }
 
     @Override
