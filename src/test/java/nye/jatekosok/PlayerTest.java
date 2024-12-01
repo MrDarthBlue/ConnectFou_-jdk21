@@ -7,15 +7,18 @@ public class PlayerTest {
     @Test
     public void testPlayerCreation() {
         Player player = new Player("Player", 'Y');
+
         assertEquals("Player", player.getName());
         assertEquals('Y', player.getColor());
     }
 
     @Test
     public void testEquals() {
+        //kettő azonos Player objektumot hoz létre + egy eltérőt
         Player player1 = new Player("Player", 'Y');
         Player player2 = new Player("Player", 'Y');
         Player player3 = new Player("Player", 'R');
+
         assertTrue(player1.equals(player2));
         assertFalse(player1.equals(player3));
     }

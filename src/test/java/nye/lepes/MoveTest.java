@@ -7,6 +7,7 @@ public class MoveTest {
     @Test
     public void testMoveCreation() {
         Move move = new Move("Player", 'Y', "a");
+
         assertEquals("Player", move.getPlayerName());
         assertEquals('Y', move.getColor());
         assertEquals("a", move.getColumn());
@@ -14,9 +15,11 @@ public class MoveTest {
 
     @Test
     public void testEquals() {
+        //kettő azonosos Move objektumot hoz létre és egy eltérőt
         Move move1 = new Move("Player", 'Y', "a");
         Move move2 = new Move("Player", 'Y', "a");
         Move move3 = new Move("AI", 'R', "b");
+
         assertTrue(move1.equals(move2));
         assertFalse(move1.equals(move3));
     }
